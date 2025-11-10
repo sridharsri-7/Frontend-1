@@ -34,17 +34,17 @@ const Register = () => {
     <div>
       <form onSubmit={submit}>
         <h2>Register</h2>
-        <input name="name" placeholder="name" onChange={change} />
-        <input name="email" placeholder="email" onChange={change} />
-        <input name="password" placeholder="password" onChange={change} />
-        <input name="imageUrl" placeholder="imageUrl" onChange={change} />
+        <input required value={form.name} name="name" placeholder="name" onChange={change} />
+        <input required value={form.email} name="email" placeholder="email" onChange={change} />
+        <input required value={form.password} name="password" placeholder="password" onChange={change} />
+        <input required value={form.imageUrl} name="imageUrl" placeholder="imageUrl" onChange={change} />
         {/* ... */}
-        <select name="role" defaultValue="user" onChange={change}>
+        <select required value={form.role} name="role" defaultValue="user" onChange={change}>
           <option value="user">user</option>
           <option value="admin">admin</option>
         </select>
         {form.role === "admin" && (
-          <input name="adminCode" placeholder="admin code" onChange={change} />
+          <input required value={form.adminCode} name="adminCode" placeholder="admin code" onChange={change} />
         )}
         <button type="submit">register</button>
       </form>
